@@ -1,0 +1,24 @@
+<script>
+    let rand = Math.floor(Math.random() * (Math.floor(100) - Math.ceil(1) + 1)) + Math.ceil(1);
+
+    let n = Math.floor(Math.random() * (Math.floor(rand-1) - Math.ceil(1) + 1)) + Math.ceil(1);
+
+    let arr = Array.from(Array(rand).keys());
+
+    function groupArrayElements(arr, n)
+    {
+        var index = 0;
+        var arrayLength = arr.length;
+        var tempArray = [];
+        
+        for (index = 0; index < arrayLength; index += n) {
+            myChunk = arr.slice(index, index+n);
+            tempArray.push(myChunk);
+        }
+
+        return tempArray;
+    }
+    
+    console.log(groupArrayElements(arr, n));
+
+</script>
